@@ -11,7 +11,7 @@ type ThemeContext = {
   setTheme: (theme: Theme) => void;
 };
 
-export const ThemeContext = createContext<ThemeContext | null>(null);
+export const ThemeContext = createContext<ThemeContext>({} as ThemeContext);
 
 export function ThemeContextProvider({ children }: ThemeProps) {
   const [theme, setTheme] = useState<Theme>('dark');
