@@ -6,12 +6,16 @@ type ThemeProps = {
 
 type Theme = 'light' | 'dark';
 
-type ThemeContext = {
+type ThemeContextProps = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };
 
-export const ThemeContext = createContext({} as ThemeContext);
+export const ThemeContext = createContext<ThemeContextProps | any>(
+  {} as ThemeContextProps
+);
+
+console.log(ThemeContext);
 
 export function ThemeContextProvider({ children }: ThemeProps) {
   const [theme, setTheme] = useState<Theme>('dark');
