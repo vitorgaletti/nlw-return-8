@@ -15,8 +15,6 @@ export const ThemeContext = createContext<ThemeContextProps | any>(
   {} as ThemeContextProps
 );
 
-console.log(ThemeContext);
-
 export function ThemeContextProvider({ children }: ThemeProps) {
   const [theme, setTheme] = useState<Theme>('dark');
 
